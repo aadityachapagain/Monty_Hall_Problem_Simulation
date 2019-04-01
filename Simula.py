@@ -23,15 +23,13 @@ class MontyHall:
             while True:
                 other_picks = random.randint(0,2)
                 if other_picks != picks and self.doors_price[other_picks] != self.doors_price[picks]:
-                    showed =  self.doors_price[other_picks]
+                    showed =  other_picks
                     break
 
             if self.mode:
-                while (True):
-                    new_picks = random.randint(0,2)
-                    if self.doors_price[new_picks] != self.doors_price[picks] and self.doors_price[new_picks] != showed:
-                        picks = new_picks
-                        break
+                # print(picks, showed)
+                picks = 3 - picks - showed
+                # print('new picks:', picks)
 
             # del self.doors_price[picks]
 
