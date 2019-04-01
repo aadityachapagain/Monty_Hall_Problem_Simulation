@@ -1,6 +1,7 @@
 # Monty hall problem siumulation
 
 import random
+from matplotlib import pyplot as plt
 
 
 class MontyHall:
@@ -14,7 +15,6 @@ class MontyHall:
         self.max_sample = max_sample
         self.win = 0
         self.lose = 0
-
 
     def start(self):
         self.reset()
@@ -48,10 +48,26 @@ class MontyHall:
 
 
 if __name__ == '__main__':
-    for
-    unchanged = MontyHall()
-    unchanged.start()
-    print('winning chance when state is unchanged is : ',unchanged.win/unchanged.max_sample)
-    changed = MontyHall(mode=1)
-    changed.start()
-    print('winning chance when state is changed is : ', changed.win / changed.max_sample)
+    mode_0 = []
+    mode_1 = []
+    for i in range(20):
+        unchanged = MontyHall()
+        unchanged.start()
+        print('winning chance when state is unchanged is : ',unchanged.win/unchanged.max_sample)
+        mode_0.append(unchanged.win/unchanged.max_sample)
+
+        changed = MontyHall(mode=1)
+        changed.start()
+        print('winning chance when state is changed is : ', changed.win / changed.max_sample)
+        mode_1.append(changed.win / changed.max_sample)
+
+    plt.suptitle('Monty Hall Problem Simulation ')
+    plt.title('Monty Hall Problem Simulation')
+    plt.subplot(121)
+    plt.title('probablity distribution of getting price when state unchanged')
+    plt.plot(range(20),mode_0)
+
+    plt.subplot(122)
+    plt.title('probablity distribution of getting price when state changed')
+    plt.plot(range(20),mode_1)
+    plt.show()
