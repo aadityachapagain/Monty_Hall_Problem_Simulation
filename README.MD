@@ -4,7 +4,6 @@
 
 ![Visualizaiton of Monty Hall Problem Simulation](./images/sim.png)
 
-From above picture we can see that the Probablity Distribution of Monty Hall problem in both case like 
-choosing same door and choosing different door is almost same.
+From above picture we can see that the Probablity Distribution of Monty Hall problem is greater when picked door is changed than remain unchanged.
 
 Au Reviour !
